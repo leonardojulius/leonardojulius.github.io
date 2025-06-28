@@ -333,7 +333,7 @@ article.active {
 main {
   margin: 15px 12px;
   margin-bottom: 75px;
-  min-width: 259px;
+/*   min-width: 259px; */
 }
 
 
@@ -1569,6 +1569,10 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .form-btn ion-icon { font-size: 18px; }
 
+}
+
+.service-item p {
+  color:#fff;
 }
 
 
