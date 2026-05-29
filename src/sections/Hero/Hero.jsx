@@ -1,7 +1,7 @@
 import { ArrowDownIcon } from '../../components/Icons'
 import './Hero.css'
 
-function Hero({ scrollTo }) {
+function Hero({ scrollTo, theme }) {
   return (
     <section id="hero" className="hero">
       <div className="hero__content">
@@ -24,6 +24,15 @@ function Hero({ scrollTo }) {
         </div>
         <div className="hero__image">
           <img src="/profile/no-bg.png" alt="Julius Leonardo" />
+          <div className="hero__earth">
+            <div className={`planet-container ${theme === 'dark' ? 'planet--night' : 'planet--day'}`}>
+              <div className="planet-night"></div>
+              <div className="planet-day"></div>
+              <div className="planet-clouds"></div>
+              <div className="planet-inner-shadow"></div>
+              <div className="planet-atmosphere"></div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="hero__scroll" onClick={() => scrollTo('about')}>

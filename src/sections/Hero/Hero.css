@@ -24,8 +24,8 @@
 
 .hero__image {
   flex-shrink: 0;
-  width: 380px;
-  height: 380px;
+  width: 450px;
+  height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,8 +39,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 320px;
-  height: 320px;
+  width: 380px;
+  height: 380px;
   border-radius: 50%;
   background: conic-gradient(
     from 0deg,
@@ -76,6 +76,145 @@
 @keyframes heroFloat {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-12px); }
+}
+
+/* ===== Rotating Earth ===== */
+.hero__earth {
+  position: absolute;
+  top: 50%;
+  left: 42%;
+  transform: translate(-50%, -50%);
+  width: 95px;
+  height: 95px;
+  z-index: 2;
+  animation: heroFloat 5s ease-in-out infinite;
+}
+
+.planet-container {
+  border-radius: 50%;
+  height: 95px;
+  overflow: hidden;
+  position: relative;
+  width: 95px;
+}
+
+.planet-atmosphere {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: none;
+  background: radial-gradient(circle at 70% 50%, transparent 45%, rgba(50, 140, 255, 0.4) 80%, rgba(50, 140, 255, 0.6) 95%, rgba(80, 170, 255, 0.3) 100%);
+  filter: blur(2px);
+  z-index: 10;
+  pointer-events: none;
+  transition: opacity 1s ease;
+}
+
+.planet--day .planet-atmosphere {
+  opacity: 0.3;
+}
+
+.planet--night .planet-atmosphere {
+  opacity: 1;
+}
+
+
+.planet-night {
+  animation: rotate-earth 80s linear infinite;
+  background: url('https://www.solarsystemscope.com/textures/download/2k_earth_nightmap.jpg');
+  background-size: 200% 100%;
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: opacity 1s ease;
+  filter: brightness(1.5) saturate(1.3);
+}
+
+.planet--day .planet-night {
+  opacity: 0;
+}
+
+.planet--night .planet-night {
+  opacity: 1;
+  filter: brightness(1.8) contrast(1.5);
+}
+
+.planet-day {
+  animation: rotate-earth 80s linear infinite;
+  background: url('https://www.solarsystemscope.com/textures/download/2k_earth_daymap.jpg');
+  background-size: 200% 100%;
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: brightness(1.4) saturate(1.2);
+  opacity: 1;
+  transition: opacity 1s ease;
+  z-index: 1;
+}
+
+.planet--day .planet-day {
+  opacity: 1;
+}
+
+.planet--night .planet-day {
+  opacity: 1;
+  filter: brightness(1.4) saturate(1.2);
+  mask-image: linear-gradient(to right, black 30%, transparent 70%);
+  -webkit-mask-image: linear-gradient(to right, black 30%, transparent 70%);
+}
+
+.planet-clouds {
+  animation: rotate-clouds 60s linear infinite;
+  background: url('https://www.solarsystemscope.com/textures/download/2k_earth_clouds.jpg');
+  background-size: 200% 100%;
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 1s ease;
+  z-index: 1;
+}
+
+.planet--night .planet-clouds {
+  opacity: 0.3;
+}
+
+.planet-inner-shadow {
+  background: radial-gradient(circle at 35% 35%, transparent 50%, rgba(0, 0, 0, 0.3) 100%);
+  border-radius: 50%;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  transition: all 1s ease;
+  box-shadow: none;
+}
+
+.planet--night .planet-inner-shadow {
+  background: none;
+  box-shadow: inset -15px 0px 20px 3px rgba(0, 0, 0, 0.7), inset -3px 0px 8px 1px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes rotate-earth {
+  0% { background-position: 0% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes rotate-clouds {
+  0% { background-position: 0% 0; }
+  100% { background-position: -200% 0; }
 }
 
 .hero__greeting {

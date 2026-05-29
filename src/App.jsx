@@ -81,7 +81,7 @@ function App() {
         theme={theme}
         toggleTheme={toggleTheme}
       />
-      <Hero scrollTo={scrollTo} />
+      <Hero scrollTo={scrollTo} theme={theme} />
       <About />
       <Skills />
       <Projects />
