@@ -14,8 +14,8 @@ function Hero({ scrollTo, theme }) {
            By connecting AI models, robust APIs, and modern web frameworks, I design workflows that eliminate manual tasks and unlock scalable growth for companies.
           </p>
           <div className="hero__cta">
-            <a className="btn btn--primary" onClick={() => scrollTo('projects')}>
-              View My Work
+            <a className="btn btn--rgb" href="#" target="_blank" rel="noopener noreferrer">
+              Resume
             </a>
             <a className="btn btn--outline" onClick={() => scrollTo('contact')}>
               Get In Touch

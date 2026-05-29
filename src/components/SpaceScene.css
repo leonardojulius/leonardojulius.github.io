@@ -374,8 +374,8 @@
 /* ===== Rocket ===== */
 .space-scene__rocket {
   position: absolute;
-  bottom: 200px;
-  left: 15%;
+  top: 80px;
+  left: 80px;
   transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
   animation: rocketFly 4s ease-in-out infinite;
 }

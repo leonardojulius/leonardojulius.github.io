@@ -22,6 +22,9 @@ function Navbar({ scrolled, menuOpen, setMenuOpen, activeSection, scrollTo, them
         </button>
 
         <ul className={`nav__links ${menuOpen ? 'nav__links--open' : ''}`}>
+          <li>
+            <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+          </li>
           {['about', 'skills', 'projects', 'certificates', 'experience', 'contact'].map((item) => (
             <li key={item}>
               <a
@@ -32,14 +35,6 @@ function Navbar({ scrolled, menuOpen, setMenuOpen, activeSection, scrollTo, them
               </a>
             </li>
           ))}
-          <li>
-            <a className="nav__resume-btn" href="#" target="_blank" rel="noopener noreferrer">
-              Resume
-            </a>
-          </li>
-          <li>
-            <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
-          </li>
         </ul>
       </div>
     </nav>

@@ -43,6 +43,7 @@ export const experiences = [
     period: '2023 — Present',
     description: 'Designing and deploying AI-powered automation solutions for businesses. Building intelligent workflows that integrate LLMs, APIs, and custom logic to eliminate manual processes.',
   },
+  
   {
     role: 'Automation Engineer',
     company: 'Tech Solutions Inc.',
