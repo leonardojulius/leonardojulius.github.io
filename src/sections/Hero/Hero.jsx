@@ -4,6 +4,7 @@ import './Hero.css'
 
 function Hero({ scrollTo, theme }) {
   const [earthLoaded, setEarthLoaded] = useState(false)
+  const [profileLoaded, setProfileLoaded] = useState(false)
 
   useEffect(() => {
     const textures = [
@@ -37,7 +38,7 @@ function Hero({ scrollTo, theme }) {
         <div className="hero__text">
           <p className="hero__greeting">Hi, my name is</p>
           <h1 className="hero__name">Julius Leonardo</h1>
-          <h2 className="hero__tagline">AI Automation & Junior Fullstack Developer</h2>
+          <h2 className="hero__tagline">AI Automation  Web Development</h2>
           <p className="hero__description">
            I'm a Junior Full Stack Developer and AI Automation Specialist who builds intelligent, end-to-end applications. 
            By connecting AI models, robust APIs, and modern web frameworks, I design workflows that eliminate manual tasks and unlock scalable growth for companies.
@@ -52,7 +53,12 @@ function Hero({ scrollTo, theme }) {
           </div>
         </div>
         <div className="hero__image">
-          <img src="/profile/no-bg.png" alt="Julius Leonardo" />
+          <img
+            src="/profile/no-bg.png"
+            alt="Julius Leonardo"
+            className={profileLoaded ? 'hero__profile--loaded' : ''}
+            onLoad={() => setProfileLoaded(true)}
+          />
           <div className={`hero__earth ${earthLoaded ? 'hero__earth--loaded' : ''}`}>
             <div className={`planet-container ${theme === 'dark' ? 'planet--night' : 'planet--day'}`}>
               <div className="planet-night"></div>

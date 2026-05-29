@@ -71,6 +71,12 @@
   z-index: 1;
   filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.3));
   animation: heroFloat 5s ease-in-out infinite;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.hero__image img.hero__profile--loaded {
+  opacity: 1;
 }
 
 @keyframes heroFloat {
