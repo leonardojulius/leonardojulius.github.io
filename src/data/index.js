@@ -75,35 +75,13 @@ export const certificates = [
         icon: '/icons/n8n-white.svg'
   },
   {
-    title: 'DeepLearning.AI — ChatGPT Prompt Engineering',
-    issuer: 'DeepLearning.AI',
-    date: '2023',
-    credentialUrl: '#',
-    image: '/certificates/deeplearning-prompt.png',
-    icon: '/icons/deeplearning.png',
+    title: 'AI Fundamentals',
+    issuer: 'Google',
+    date: '2026',
+    credentialUrl: 'https://coursera.org/share/2af72f559860e5d2b749458a52cc4fab',
+    image: '/certificates/ai-fun.jpg',
+    icon: '/icons/google.svg',
   },
-  {
-    title: 'Google IT Automation with Python',
-    issuer: 'Google / Coursera',
-    date: '2022',
-    credentialUrl: '#',
-    image: '/certificates/google-python.png',
-    icon: '/icons/google.png',
-  },
-  {
-    title: 'LangChain for LLM Application Development',
-    issuer: 'DeepLearning.AI',
-    date: '2024',
-    credentialUrl: '#',
-    image: '/certificates/langchain-llm.png',
-    icon: '/icons/langchain.png',
-  },
-  {
-    title: 'Docker & Kubernetes Fundamentals',
-    issuer: 'Linux Foundation',
-    date: '2022',
-    credentialUrl: '#',
-    image: '/certificates/docker-k8s.png',
-    icon: '/icons/docker.png',
-  },
+ 
+
 ]
