@@ -88,6 +88,12 @@
   height: 95px;
   z-index: 2;
   animation: heroFloat 5s ease-in-out infinite;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.hero__earth--loaded {
+  opacity: 1;
 }
 
 .planet-container {
@@ -140,7 +146,7 @@
 
 .planet--night .planet-night {
   opacity: 1;
-  filter: brightness(1.8) contrast(1.5);
+  filter: brightness(1.8) saturate(1.5) contrast(1.2);
 }
 
 .planet-day {

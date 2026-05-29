@@ -1,7 +1,36 @@
+import { useState, useEffect } from 'react'
 import { ArrowDownIcon } from '../../components/Icons'
 import './Hero.css'
 
 function Hero({ scrollTo, theme }) {
+  const [earthLoaded, setEarthLoaded] = useState(false)
+
+  useEffect(() => {
+    const textures = [
+      'https://www.solarsystemscope.com/textures/download/2k_earth_nightmap.jpg',
+      'https://www.solarsystemscope.com/textures/download/2k_earth_daymap.jpg',
+      'https://www.solarsystemscope.com/textures/download/2k_earth_clouds.jpg',
+    ]
+
+    let loaded = 0
+    textures.forEach((src) => {
+      const img = new Image()
+      img.onload = () => {
+        loaded++
+        if (loaded === textures.length) {
+          setEarthLoaded(true)
+        }
+      }
+      img.onerror = () => {
+        loaded++
+        if (loaded === textures.length) {
+          setEarthLoaded(true)
+        }
+      }
+      img.src = src
+    })
+  }, [])
+
   return (
     <section id="hero" className="hero">
       <div className="hero__content">
@@ -24,7 +53,7 @@ function Hero({ scrollTo, theme }) {
         </div>
         <div className="hero__image">
           <img src="/profile/no-bg.png" alt="Julius Leonardo" />
-          <div className="hero__earth">
+          <div className={`hero__earth ${earthLoaded ? 'hero__earth--loaded' : ''}`}>
             <div className={`planet-container ${theme === 'dark' ? 'planet--night' : 'planet--day'}`}>
               <div className="planet-night"></div>
               <div className="planet-day"></div>
