@@ -1,0 +1,25 @@
+/* ===== Contact ===== */
+.contact {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.contact .section__title {
+  justify-content: center;
+}
+
+.contact .section__title::after {
+  display: none;
+}
+
+.contact__content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact__text {
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}

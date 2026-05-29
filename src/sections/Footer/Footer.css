@@ -1,0 +1,35 @@
+/* ===== Footer ===== */
+.footer {
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer__socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer__socials a {
+  color: var(--color-text-secondary);
+  transition: var(--transition);
+}
+
+.footer__socials a:hover {
+  color: var(--color-primary);
+  transform: translateY(-3px);
+}
+
+.footer__credit {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.footer__copyright {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-dark);
+}
