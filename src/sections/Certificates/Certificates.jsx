@@ -16,7 +16,11 @@ function Certificates() {
           {certificates.map((cert, index) => (
             <div key={index} className="certificate-card fade-up">
               <div className="certificate-card__icon">
-                <CertificateIcon />
+                {cert.icon ? (
+                  <img src={cert.icon} alt={cert.issuer} className="certificate-card__icon-img" />
+                ) : (
+                  <CertificateIcon />
+                )}
               </div>
               <h3 className="certificate-card__title">{cert.title}</h3>
               <p className="certificate-card__issuer">{cert.issuer}</p>

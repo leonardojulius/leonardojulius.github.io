@@ -59,18 +59,20 @@ export const experiences = [
 
 export const certificates = [
   {
-    title: 'n8n Advanced Automation',
+    title: 'n8n Course Level 1',
     issuer: 'n8n.io',
-    date: '2024',
-    credentialUrl: '#',
-    image: '/certificates/n8n-advanced.png',
+    date: '2026',
+    credentialUrl: 'https://community.n8n.io/badges/104/completed-n8n-course-level-1?username=leonardojulius',
+    image: '/certificates/n8n-lvl1.JPG',
+    icon: '/icons/n8n-white.svg',
   },
   {
-    title: 'AWS Certified Cloud Practitioner',
-    issuer: 'Amazon Web Services',
-    date: '2023',
-    credentialUrl: '#',
-    image: '/certificates/aws-cloud-practitioner.png',
+    title: 'n8n Course Level 2',
+    issuer: 'n8n.io',
+    date: '2026',
+    credentialUrl: 'https://community.n8n.io/badges/105/completed-n8n-course-level-2?username=leonardojulius',
+    image: '/certificates/n8n-lvl2.JPG',
+        icon: '/icons/n8n-white.svg'
   },
   {
     title: 'DeepLearning.AI — ChatGPT Prompt Engineering',
@@ -78,6 +80,7 @@ export const certificates = [
     date: '2023',
     credentialUrl: '#',
     image: '/certificates/deeplearning-prompt.png',
+    icon: '/icons/deeplearning.png',
   },
   {
     title: 'Google IT Automation with Python',
@@ -85,6 +88,7 @@ export const certificates = [
     date: '2022',
     credentialUrl: '#',
     image: '/certificates/google-python.png',
+    icon: '/icons/google.png',
   },
   {
     title: 'LangChain for LLM Application Development',
@@ -92,6 +96,7 @@ export const certificates = [
     date: '2024',
     credentialUrl: '#',
     image: '/certificates/langchain-llm.png',
+    icon: '/icons/langchain.png',
   },
   {
     title: 'Docker & Kubernetes Fundamentals',
@@ -99,5 +104,6 @@ export const certificates = [
     date: '2022',
     credentialUrl: '#',
     image: '/certificates/docker-k8s.png',
+    icon: '/icons/docker.png',
   },
 ]
