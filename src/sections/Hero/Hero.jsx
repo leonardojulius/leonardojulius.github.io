@@ -4,7 +4,7 @@ import './Hero.css'
 
 const titles = [
   'AI Automation Specialist',
-  'Junior Full Stack Web Developer',
+  'Junior Full Stack Engineer',
   'n8n Workflow Builder',
   'Social Media Automation',
 ]
