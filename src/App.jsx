@@ -8,6 +8,8 @@ import Certificates from './sections/Certificates/Certificates'
 import Experience from './sections/Experience/Experience'
 import Contact from './sections/Contact/Contact'
 import Footer from './sections/Footer/Footer'
+import ParticleNetwork from './components/ParticleNetwork'
+import SpaceScene from './components/SpaceScene'
 import './App.css'
 
 function App() {
@@ -68,6 +70,8 @@ function App() {
 
   return (
     <div className="portfolio">
+      <ParticleNetwork />
+      <SpaceScene theme={theme} />
       <Navbar
         scrolled={scrolled}
         menuOpen={menuOpen}
