@@ -1,10 +1,46 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { ArrowDownIcon } from '../../components/Icons'
 import './Hero.css'
+
+const titles = [
+  'AI Automation Specialist',
+  'Junior Full Stack Web Developer',
+  'n8n Workflow Builder',
+  'Social Media Automation',
+]
 
 function Hero({ scrollTo, theme }) {
   const [earthLoaded, setEarthLoaded] = useState(false)
   const [profileLoaded, setProfileLoaded] = useState(false)
+  const [titleIndex, setTitleIndex] = useState(0)
+  const [displayText, setDisplayText] = useState('')
+  const [isDeleting, setIsDeleting] = useState(false)
+
+  useEffect(() => {
+    const currentTitle = titles[titleIndex]
+    let timeout
+
+    if (!isDeleting) {
+      if (displayText.length < currentTitle.length) {
+        timeout = setTimeout(() => {
+          setDisplayText(currentTitle.slice(0, displayText.length + 1))
+        }, 80)
+      } else {
+        timeout = setTimeout(() => setIsDeleting(true), 2000)
+      }
+    } else {
+      if (displayText.length > 0) {
+        timeout = setTimeout(() => {
+          setDisplayText(displayText.slice(0, -1))
+        }, 40)
+      } else {
+        setIsDeleting(false)
+        setTitleIndex((prev) => (prev + 1) % titles.length)
+      }
+    }
+
+    return () => clearTimeout(timeout)
+  }, [displayText, isDeleting, titleIndex])
 
   useEffect(() => {
     const textures = [
@@ -38,7 +74,10 @@ function Hero({ scrollTo, theme }) {
         <div className="hero__text">
           <p className="hero__greeting">Hi, my name is</p>
           <h1 className="hero__name">Julius Leonardo</h1>
-          <h2 className="hero__tagline">AI Automation  Web Development</h2>
+          <h2 className="hero__tagline">
+            <span className="hero__typewriter">{displayText}</span>
+            <span className="hero__cursor">|</span>
+          </h2>
           <p className="hero__description">
            I'm a Junior Full Stack Developer and AI Automation Specialist who builds intelligent, end-to-end applications. 
            By connecting AI models, robust APIs, and modern web frameworks, I design workflows that eliminate manual tasks and unlock scalable growth for companies.

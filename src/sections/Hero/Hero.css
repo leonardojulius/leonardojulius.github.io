@@ -250,6 +250,23 @@
   color: var(--color-text-secondary);
   line-height: 1.1;
   margin-bottom: 1.5rem;
+  min-height: 3.5rem;
+}
+
+.hero__typewriter {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.hero__cursor {
+  color: var(--color-primary);
+  animation: blink 0.8s step-end infinite;
+  font-weight: 100;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .hero__description {

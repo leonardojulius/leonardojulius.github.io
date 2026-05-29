@@ -43,7 +43,7 @@ export const experiences = [
     period: '2023 — Present',
     description: 'Designing and deploying AI-powered automation solutions for businesses. Building intelligent workflows that integrate LLMs, APIs, and custom logic to eliminate manual processes.',
   },
-  
+
   {
     role: 'Automation Engineer',
     company: 'Tech Solutions Inc.',
@@ -59,14 +59,15 @@ export const experiences = [
 ]
 
 export const certificates = [
-  {
-    title: 'n8n Course Level 1',
-    issuer: 'n8n.io',
+    {
+    title: 'AI Fundamentals',
+    issuer: 'Google',
     date: '2026',
-    credentialUrl: 'https://community.n8n.io/badges/104/completed-n8n-course-level-1?username=leonardojulius',
-    image: '/certificates/n8n-lvl1.JPG',
-    icon: '/icons/n8n-white.svg',
+    credentialUrl: 'https://coursera.org/share/2af72f559860e5d2b749458a52cc4fab',
+    image: '/certificates/ai-fun.jpg',
+    icon: '/icons/google.svg',
   },
+ 
   {
     title: 'n8n Course Level 2',
     issuer: 'n8n.io',
@@ -75,14 +76,15 @@ export const certificates = [
     image: '/certificates/n8n-lvl2.JPG',
         icon: '/icons/n8n-white.svg'
   },
-  {
-    title: 'AI Fundamentals',
-    issuer: 'Google',
+   {
+    title: 'n8n Course Level 1',
+    issuer: 'n8n.io',
     date: '2026',
-    credentialUrl: 'https://coursera.org/share/2af72f559860e5d2b749458a52cc4fab',
-    image: '/certificates/ai-fun.jpg',
-    icon: '/icons/google.svg',
+    credentialUrl: 'https://community.n8n.io/badges/104/completed-n8n-course-level-1?username=leonardojulius',
+    image: '/certificates/n8n-lvl1.JPG',
+    icon: '/icons/n8n-white.svg',
   },
+
  
 
 ]
