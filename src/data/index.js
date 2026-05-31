@@ -77,14 +77,7 @@ export const experiences = [
 
 export const certificates = [
 
-      {
-    title: 'Social Media Management 2.0:A Paradigm Shift on AI Powered Interaction',
-    issuer: 'DICT',
-    date: '2026',
-    credentialUrl: 'https://drive.google.com/file/d/1N5LdU7UUqVlpzGg8eOAI7uSmIUpeAPsf/view?usp=drive_link',
-    image: '/certificates/Spark.png',
-    icon: '/icons/dict.png',
-    },
+ ,
 
       {
     title: 'AI for Brainstorming and Planning',
@@ -120,6 +113,15 @@ export const certificates = [
     image: '/certificates/n8n-lvl1.JPG',
     icon: '/icons/n8n-white.svg',
   },
+
+     {
+    title: 'Social Media Management 2.0:A Paradigm Shift on AI Powered Interaction',
+    issuer: 'DICT',
+    date: '2026',
+    credentialUrl: 'https://drive.google.com/file/d/1N5LdU7UUqVlpzGg8eOAI7uSmIUpeAPsf/view?usp=drive_link',
+    image: '/certificates/Spark.png',
+    icon: '/icons/dict.png',
+    }
 
  
 
