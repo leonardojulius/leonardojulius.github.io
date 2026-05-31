@@ -37,13 +37,28 @@ export const skills = [
 ]
 
 export const experiences = [
+
   {
     role: 'Tech Support / Web Developer',
     company: 'National Irrigation Administration',
-    period: '2022 — 2025',
+    period: '2025',
     description: 'Designing and deploying Web Application solutions for businesses. Building web application that integrate APIs, and custom logic to eliminate hard copy processes.',
   },
 
+    
+  {
+    role: 'Technical Support / Staff',
+    company: 'Action Able Inc.',
+    period: '2024',
+    description: 'Diagnosing and resolving hardware, software, and network connectivity issues, ranging from simple password resets to complex system crashes.',
+  },
+
+    {
+    role: 'Quality Assurance / Customer Service',
+    company: 'Action Able Inc.',
+    period: ' 2023',
+    description: 'Reviewing interactions and data to find ways to improve the overall service quality',
+  },
    /*
 
   {
