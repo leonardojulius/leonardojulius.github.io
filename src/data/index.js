@@ -1,5 +1,5 @@
 export const projects = [
-  {
+/*   {
     title: 'Intelligent Document Processing Pipeline',
     description: 'End-to-end automation system that extracts, classifies, and routes documents using AI. Processes 10,000+ documents daily with 98% accuracy.',
     tags: ['n8n', 'OpenAI', 'Python', 'AWS Lambda', 'PostgreSQL'],
@@ -19,30 +19,32 @@ export const projects = [
     tags: ['n8n', 'OpenAI', 'HubSpot API', 'Webhooks', 'PostgreSQL'],
     github: '#',
     live: '#',
-  },
+  }, */
   {
-    title: 'AI Content Generation Engine',
-    description: 'Automated content pipeline that generates, reviews, and publishes SEO-optimized articles across multiple platforms with human-in-the-loop approval.',
-    tags: ['n8n', 'Claude API', 'WordPress', 'Airtable', 'Docker'],
+    title: 'AI Facebook Auto-Posting Engine',
+    description: 'An automated posting pipeline that synthesizes dynamic social content and renders custom image layouts, utilizing human-in-the-loop validation before automated API deployment to Facebook',
+    tags: ['n8n', 'API', 'Docker','Custom Application Api for Image generation'],
     github: '#',
     live: '#',
   },
 ]
 
 export const skills = [
-  { category: 'AI & LLMs', items: ['OpenAI / GPT-4', 'Claude / Anthropic', 'LangChain', 'RAG Systems', 'Prompt Engineering'] },
+  { category: 'AI & LLMs', items: ['Gemini/API', 'Groq/API','OpenRouter / APi','Kiro /  Claude Opus ', 'Prompt Engineering'] },
   { category: 'Automation', items: ['n8n', 'Custom Workflows', 'Webhooks', 'API Integrations', 'Event-Driven Systems'] },
-  { category: 'Development', items: ['Python', 'JavaScript', 'Node.js', 'REST APIs', 'Docker'] },
-  { category: 'Cloud & Data', items: ['AWS', 'PostgreSQL', 'Redis', 'Webhooks', 'Vector Databases'] },
+  { category: 'Development', items: ['Python', 'JavaScript',  'REST APIs', 'Docker'] },
+  { category: 'Cloud & Data', items: ['AWS', 'PostgreSQL', 'Redis', 'Webhooks', ] },
 ]
 
 export const experiences = [
   {
-    role: 'AI Automation Specialist',
-    company: 'Freelance / Consulting',
-    period: '2023 — Present',
-    description: 'Designing and deploying AI-powered automation solutions for businesses. Building intelligent workflows that integrate LLMs, APIs, and custom logic to eliminate manual processes.',
+    role: 'Tech Support / Web Developer',
+    company: 'National Irrigation Administration',
+    period: '2022 — 2025',
+    description: 'Designing and deploying Web Application solutions for businesses. Building web application that integrate APIs, and custom logic to eliminate hard copy processes.',
   },
+
+   /*
 
   {
     role: 'Automation Engineer',
@@ -55,7 +57,7 @@ export const experiences = [
     company: 'Digital Agency',
     period: '2019 — 2021',
     description: 'Developed web applications and backend services. Introduced workflow automation tools that saved the team 20+ hours per week.',
-  },
+  }, */
 ]
 
 export const certificates = [
