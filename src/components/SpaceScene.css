@@ -156,10 +156,10 @@
 /* ===== Satellite ===== */
 .space-scene__satellite {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 140px;
+  right: 120px;
   transition: opacity 1.2s ease;
-  will-change: transform;
+  animation: satelliteFloat 6s ease-in-out infinite;
 }
 
 .space-scene--night .space-scene__satellite {
@@ -217,10 +217,10 @@
 /* ===== Astronaut ===== */
 .space-scene__astronaut {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 170px;
+  right: 140px;
   transition: opacity 1.2s ease;
-  will-change: transform;
+  animation: astronautFloat 6s ease-in-out infinite;
 }
 
 .space-scene--night .space-scene__astronaut {
@@ -229,6 +229,16 @@
 
 .space-scene--day .space-scene__astronaut {
   opacity: 0;
+}
+
+@keyframes astronautFloat {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-5px) rotate(2deg); }
+}
+
+@keyframes satelliteFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-4px) rotate(1deg); }
 }
 
 .space-scene__astronaut-body {
@@ -298,12 +308,14 @@
 
 @keyframes armReach {
   0%, 100% { transform: rotate(30deg); }
-  50% { transform: rotate(50deg); }
+  50% { transform: rotate(45deg); }
 }
 
 @keyframes armWork {
-  0%, 100% { transform: rotate(-25deg); }
-  50% { transform: rotate(-45deg); }
+  0%, 30% { transform: rotate(-20deg); }
+  50% { transform: rotate(-55deg); }
+  70% { transform: rotate(-20deg); }
+  100% { transform: rotate(-20deg); }
 }
 
 .space-scene__leg {
@@ -336,6 +348,17 @@
   left: -2px;
   z-index: -1;
   border: 1px solid #616161;
+}
+
+.space-scene__tether {
+  position: absolute;
+  top: 45px;
+  right: -35px;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(to right, #bbb, rgba(187, 187, 187, 0.3));
+  transform: rotate(-20deg);
+  transform-origin: left center;
 }
 
 /* ===== Thruster ===== */
@@ -529,24 +552,35 @@
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .space-scene__sun {
-    width: 100px;
-    height: 100px;
-    top: 30px;
-    right: 30px;
+    width: 80px;
+    height: 80px;
+    top: 20px;
+    right: 20px;
   }
 
   .space-scene__sun-body {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .space-scene__moon {
+    top: 20px;
+    right: 20px;
   }
 
   .space-scene__moon-body {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
   }
 
   .space-scene__rocket {
-    left: 5%;
-    bottom: 150px;
+    top: 60px;
+    left: 20px;
+    transform: scale(0.8);
+  }
+
+  .space-scene__satellite,
+  .space-scene__astronaut {
+    display: none;
   }
 }

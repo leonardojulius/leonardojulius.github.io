@@ -15,6 +15,8 @@ function Hero({ scrollTo, theme }) {
   const [titleIndex, setTitleIndex] = useState(0)
   const [displayText, setDisplayText] = useState('')
   const [isDeleting, setIsDeleting] = useState(false)
+  const taglineRef = useRef(null)
+  const textRef = useRef(null)
 
   useEffect(() => {
     const currentTitle = titles[titleIndex]
@@ -74,8 +76,8 @@ function Hero({ scrollTo, theme }) {
         <div className="hero__text">
           <p className="hero__greeting">Hi, my name is</p>
           <h1 className="hero__name">Julius Leonardo</h1>
-          <h2 className="hero__tagline">
-            <span className="hero__typewriter">{displayText}</span>
+          <h2 className="hero__tagline" ref={taglineRef}>
+            <span className="hero__typewriter" ref={textRef}>{displayText}</span>
             <span className="hero__cursor">|</span>
           </h2>
           <p className="hero__description">
