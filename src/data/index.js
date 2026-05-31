@@ -59,6 +59,15 @@ export const experiences = [
 ]
 
 export const certificates = [
+      {
+    title: 'AI for Brainstorming and Planning',
+    issuer: 'Google',
+    date: '2026',
+    credentialUrl: 'https://coursera.org/share/027d4a49ecd17ef77e5a03a3518caaa5',
+    image: '/certificates/google-brainstorming.png',
+    icon: '/icons/google.svg',
+    },
+
     {
     title: 'AI Fundamentals',
     issuer: 'Google',
@@ -66,7 +75,7 @@ export const certificates = [
     credentialUrl: 'https://coursera.org/share/2af72f559860e5d2b749458a52cc4fab',
     image: '/certificates/ai-fun.jpg',
     icon: '/icons/google.svg',
-  },
+    },
  
   {
     title: 'n8n Course Level 2',
