@@ -54,21 +54,46 @@ docker compose down
 ## Project Structure
 
 ```
-├── .github/workflows/deploy.yml   # GitHub Pages CI/CD
+portfolio/
+├── .github/
+│   └── workflows/
+│       └── deploy.yml           # GitHub Pages deployment
+├── public/
+│   ├── icons/                   # Certificate issuer icons
+│   ├── certificates/            # Certificate images
+│   └── profile/                 # Profile picture
 ├── src/
-│   ├── App.jsx                    # Main application component
-│   ├── App.css                    # Styles
-│   ├── main.jsx                   # Entry point
-│   └── index.css                  # Global styles
-├── index.html                     # HTML template
-├── vite.config.js                 # Vite configuration
-├── package.json                   # Dependencies
-├── Dockerfile                     # Production multi-stage build
-├── Dockerfile.dev                 # Development container
-├── docker-compose.yml             # Docker Compose orchestration
-├── nginx.conf                     # Nginx config for production
-├── .dockerignore                  # Docker build exclusions
-└── .gitignore                     # Git exclusions
+│   ├── components/
+│   │   ├── Icons.jsx            # SVG icon components
+│   │   ├── ThemeToggle.jsx      # Dark/light theme toggle
+│   │   ├── ParticleNetwork.jsx  # Animated particle background
+│   │   └── SpaceScene.jsx       # Sun, moon, astronaut, rocket
+│   ├── data/
+│   │   └── index.js             # Portfolio content (projects, skills, certs)
+│   ├── sections/
+│   │   ├── Navbar/
+│   │   ├── Hero/
+│   │   ├── About/
+│   │   ├── Skills/
+│   │   ├── Projects/
+│   │   ├── Certificates/
+│   │   ├── Experience/
+│   │   ├── Contact/
+│   │   └── Footer/
+│   ├── App.jsx                  # Main app with theme state
+│   ├── App.css                  # Global styles & CSS variables
+│   ├── main.jsx                 # Entry point
+│   └── index.css                # Font imports
+├── index.html
+├── vite.config.js
+├── package.json
+├── Dockerfile                   # Production multi-stage build
+├── Dockerfile.dev               # Development container
+├── docker-compose.yml
+├── nginx.conf
+├── .dockerignore
+├── .gitignore
+└── README.md
 ```
 
 ---
