@@ -77,9 +77,18 @@ export const experiences = [
 
 export const certificates = [
 
- ,
+ 
 
-      {
+   {
+    title: 'AI for Research and Insights',
+    issuer: 'Google',
+    date: '2026',
+    credentialUrl: 'https://coursera.org/share/3ef410379d5ffdac3ec57c0cfa840df5',
+    image: '/certificates/google-research.jpg',
+    icon: '/icons/google.svg',
+    },
+
+    {
     title: 'AI for Brainstorming and Planning',
     issuer: 'Google',
     date: '2026',
