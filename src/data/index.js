@@ -21,9 +21,18 @@ export const projects = [
       live: '#',
     }, */
   {
+    title: 'Facebook Auto-Reply with Webhooks',
+    description: 'A responsive automated customer service workflow that uses Webhooks to capture Facebook Messenger events, processes natural language intent via OpenAI, and instantly dispatches intelligent replies.',
+    tags: ['n8n', 'Webhooks', 'Facebook API', 'OpenAI'],
+    image: '/projects/fb-autoreply.png',
+    github: '#',
+    live: '#',
+  },
+  {
     title: 'AI Facebook Auto-Posting Engine',
     description: 'An automated posting pipeline that synthesizes dynamic social content and renders custom image layouts, utilizing human-in-the-loop validation before automated API deployment to Facebook',
     tags: ['n8n', 'API', 'Docker', 'Custom Application Api for Image generation'],
+    image: '/projects/n8n-workflow.png',
     github: '#',
     live: '#',
   },
