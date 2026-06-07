@@ -1,5 +1,5 @@
 export const projects = [
-  /*   {
+  /* {
       title: 'Intelligent Document Processing Pipeline',
       description: 'End-to-end automation system that extracts, classifies, and routes documents using AI. Processes 10,000+ documents daily with 98% accuracy.',
       tags: ['n8n', 'OpenAI', 'Python', 'AWS Lambda', 'PostgreSQL'],
@@ -86,7 +86,14 @@ export const experiences = [
 
 export const certificates = [
 
-
+  {
+    title: 'AI for Content Creation',
+    issuer: 'Google',
+    date: '2026',
+    credentialUrl: 'https://coursera.org/share/d1d8df40344a93b35b48cdabaa60d730',
+    image: '/certificates/google-content-creation.jpg',
+    icon: '/icons/google.svg',
+  },
 
 
   {
