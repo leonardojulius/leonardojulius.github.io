@@ -1,25 +1,5 @@
 export const projects = [
-  /* {
-      title: 'Intelligent Document Processing Pipeline',
-      description: 'End-to-end automation system that extracts, classifies, and routes documents using AI. Processes 10,000+ documents daily with 98% accuracy.',
-      tags: ['n8n', 'OpenAI', 'Python', 'AWS Lambda', 'PostgreSQL'],
-      github: '#',
-      live: '#',
-    },
-    {
-      title: 'Multi-Agent Customer Support System',
-      description: 'AI-powered support automation with intelligent routing, sentiment analysis, and escalation workflows. Reduced response time by 80%.',
-      tags: ['LangChain', 'GPT-4', 'n8n', 'Slack API', 'Redis'],
-      github: '#',
-      live: '#',
-    },
-    {
-      title: 'Sales Pipeline Automation',
-      description: 'Automated lead scoring, enrichment, and nurturing system integrating CRM, email, and AI-driven personalization at scale.',
-      tags: ['n8n', 'OpenAI', 'HubSpot API', 'Webhooks', 'PostgreSQL'],
-      github: '#',
-      live: '#',
-    }, */
+
   {
     title: 'Facebook Auto-Reply with Webhooks',
     description: 'A responsive automated customer service workflow that uses Webhooks to capture Facebook Messenger events, processes natural language intent via OpenAI, and instantly dispatches intelligent replies.',
@@ -68,23 +48,19 @@ export const experiences = [
     period: ' 2023',
     description: 'Reviewing interactions and data to find ways to improve the overall service quality',
   },
-  /*
 
- {
-   role: 'Automation Engineer',
-   company: 'Tech Solutions Inc.',
-   period: '2021 — 2023',
-   description: 'Built and maintained 50+ production automation workflows. Integrated AI models into business processes, reducing operational costs by 60%.',
- },
- {
-   role: 'Software Developer',
-   company: 'Digital Agency',
-   period: '2019 — 2021',
-   description: 'Developed web applications and backend services. Introduced workflow automation tools that saved the team 20+ hours per week.',
- }, */
 ]
 
 export const certificates = [
+
+  {
+    title: 'AI for Data Analysis',
+    issuer: 'Google',
+    date: '2026',
+    credentialUrl: 'https://coursera.org/share/c8b268129cd82bf4be997b1d2f72ef99',
+    image: '/certificates/google-analytics.jpg',
+    icon: '/icons/google.svg',
+  },
 
   {
     title: 'AI for Content Creation',
