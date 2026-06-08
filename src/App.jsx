@@ -4,6 +4,7 @@ import Hero from './sections/Hero/Hero'
 import About from './sections/About/About'
 import Skills from './sections/Skills/Skills'
 import Projects from './sections/Projects/Projects'
+import WebDesigns from './sections/WebDesigns/WebDesigns'
 import Certificates from './sections/Certificates/Certificates'
 import Experience from './sections/Experience/Experience'
 import Contact from './sections/Contact/Contact'
@@ -33,7 +34,7 @@ function App() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
 
-      const sections = ['hero', 'about', 'skills', 'projects', 'certificates', 'experience', 'contact']
+      const sections = ['hero', 'about', 'skills', 'projects', 'webdesigns', 'certificates', 'experience', 'contact']
       for (const section of [...sections].reverse()) {
         const el = document.getElementById(section)
         if (el && el.getBoundingClientRect().top <= 200) {
@@ -85,6 +86,7 @@ function App() {
       <About />
       <Skills />
       <Projects />
+      <WebDesigns />
       <Certificates />
       <Experience />
       <Contact />

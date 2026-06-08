@@ -6,7 +6,7 @@ function Experience() {
     <section id="experience" className="section experience">
       <div className="container">
         <h2 className="section__title fade-up">
-          <span className="section__number">05.</span> Experience
+          <span className="section__number">06.</span> Experience
         </h2>
         <div className="experience__timeline">
           {experiences.map((exp, index) => (

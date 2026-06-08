@@ -5,7 +5,7 @@ function Contact() {
     <section id="contact" className="section contact">
       <div className="container">
         <h2 className="section__title fade-up">
-          <span className="section__number">06.</span> Get In Touch
+          <span className="section__number">07.</span> Get In Touch
         </h2>
         <div className="contact__content fade-up">
           <p className="contact__text">
@@ -13,7 +13,7 @@ function Contact() {
             for freelance projects and consulting. Whether you need a custom automation
             system, AI integration, or workflow optimization — let's talk.
           </p>
-          <a className="btn btn--primary btn--large" href="mailto:hello@juliusleonardo.com">
+          <a className="btn btn--primary btn--large" href="mailto:leonardojulius.jcl@gmail.com">
             Say Hello
           </a>
         </div>
