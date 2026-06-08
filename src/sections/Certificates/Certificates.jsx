@@ -8,15 +8,19 @@ function Certificates() {
   const [expandedSpec, setExpandedSpec] = useState(null)
   const [fullscreenImage, setFullscreenImage] = useState(null)
   const [lensVisible, setLensVisible] = useState(false)
+  const [fsLensVisible, setFsLensVisible] = useState(false)
 
   const lensRef = useRef(null)
   const imageContainerRef = useRef(null)
+  
+  const fsLensRef = useRef(null)
+  const fsImageContainerRef = useRef(null)
 
   const ZOOM_FACTOR = 2.5
 
-  const handleMouseMove = useCallback((e) => {
-    const container = imageContainerRef.current
-    const lens = lensRef.current
+  const handleZoomMove = useCallback((e, containerRef, zoomLensRef, setVisible) => {
+    const container = containerRef.current
+    const lens = zoomLensRef.current
     if (!container || !lens) return
 
     const img = container.querySelector('img')
@@ -28,11 +32,11 @@ function Certificates() {
 
     // Keep lens within image bounds
     if (x < 0 || y < 0 || x > rect.width || y > rect.height) {
-      setLensVisible(false)
+      setVisible(false)
       return
     }
 
-    setLensVisible(true)
+    setVisible(true)
 
     const lensSize = 160
     const halfLens = lensSize / 2
@@ -50,8 +54,20 @@ function Certificates() {
     lens.style.backgroundPosition = `${bgX}% ${bgY}%`
   }, [ZOOM_FACTOR])
 
+  const handleMouseMove = useCallback((e) => {
+    handleZoomMove(e, imageContainerRef, lensRef, setLensVisible)
+  }, [handleZoomMove])
+
   const handleMouseLeave = useCallback(() => {
     setLensVisible(false)
+  }, [])
+
+  const handleFsMouseMove = useCallback((e) => {
+    handleZoomMove(e, fsImageContainerRef, fsLensRef, setFsLensVisible)
+  }, [handleZoomMove])
+
+  const handleFsMouseLeave = useCallback(() => {
+    setFsLensVisible(false)
   }, [])
 
   const handleImageClick = useCallback((imageSrc) => {
@@ -221,12 +237,25 @@ function Certificates() {
           >
             &times;
           </button>
-          <div className="fullscreen__content" onClick={(e) => e.stopPropagation()}>
+          <div 
+            className="fullscreen__content" 
+            ref={fsImageContainerRef}
+            onClick={() => setFullscreenImage(null)}
+            onMouseMove={handleFsMouseMove}
+            onMouseLeave={handleFsMouseLeave}
+            style={{ position: 'relative', cursor: 'zoom-out' }}
+          >
             <img
               src={fullscreenImage}
               alt="Certificate full view"
               className="fullscreen__image"
               onClick={() => setFullscreenImage(null)}
+              style={{ pointerEvents: 'none' }}
+            />
+            {/* Magnifying Lens for Fullscreen */}
+            <div
+              ref={fsLensRef}
+              className={`modal__zoom-lens ${fsLensVisible ? 'visible' : ''}`}
             />
           </div>
           <p className="fullscreen__hint">Click anywhere to close</p>
