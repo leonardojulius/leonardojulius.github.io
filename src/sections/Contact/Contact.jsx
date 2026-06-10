@@ -5,7 +5,7 @@ function Contact() {
     <section id="contact" className="section contact">
       <div className="container">
         <h2 className="section__title fade-up">
-          <span className="section__number">07.</span> Get In Touch
+          Get In Touch
         </h2>
         <div className="contact__content fade-up">
           <p className="contact__text">

@@ -2,6 +2,7 @@ export const projects = [
 
   {
     title: 'Facebook Auto-Reply with Webhooks',
+    category: 'n8n Automation',
     description: 'A responsive automated customer service workflow that uses Webhooks to capture Facebook Messenger events, processes natural language intent via OpenAI, and instantly dispatches intelligent replies.',
     tags: ['n8n', 'Webhooks', 'Facebook API', 'OpenAI'],
     image: '/projects/fb-autoreply.png',
@@ -10,50 +11,51 @@ export const projects = [
   },
   {
     title: 'AI Facebook Auto-Posting Engine',
+    category: 'n8n Automation',
     description: 'An automated posting pipeline that synthesizes dynamic social content and renders custom image layouts, utilizing human-in-the-loop validation before automated API deployment to Facebook',
     tags: ['n8n', 'API', 'Docker', 'Custom Application Api for Image generation'],
     image: '/projects/n8n-workflow.png',
     github: '#',
     live: '#',
   },
-]
-
-export const webDesigns = [
-
   {
     title: 'Homeverse — Real Estate',
+    category: 'Web Design',
     description: 'A modern real estate platform with property listings, search filters, and sleek card-based layouts. Built with clean semantic HTML and responsive CSS grid.',
     tags: ['HTML', 'CSS', 'JavaScript', 'Responsive'],
-    previewUrl: '/webdesigns/homeverse-main/index.html',
+    image: '/webdesigns/previews/homeverse-preview.png',
+    live: '/webdesigns/homeverse-main/index.html',
     github: 'https://github.com/leonardojulius/homeverse',
   },
-
-
-
   {
     title: 'Growth App — SaaS Landing',
+    category: 'Web Design',
     description: 'A professional SaaS landing page with gradient hero sections, feature showcases, pricing cards, and testimonials. Clean typography and modern UI patterns.',
     tags: ['HTML', 'CSS', 'JavaScript', 'Responsive'],
-    previewUrl: '/webdesigns/professional-saas-main/index.html',
+    image: '/webdesigns/previews/saas-preview.png',
+    live: '/webdesigns/professional-saas-main/index.html',
     github: 'https://github.com/leonardojulius/professional-saas',
   },
-
   {
     title: 'Crispy Fried Chicken',
+    category: 'Web Design',
     description: 'A vibrant and appetizing restaurant landing page with smooth scroll animations, responsive layouts, and a warm color palette that captures the essence of fast food branding.',
     tags: ['HTML', 'CSS', 'JavaScript', 'Responsive'],
-    previewUrl: '/webdesigns/fried-chicken-website-main/index.html',
+    image: '/webdesigns/previews/chicken-preview.png',
+    live: '/webdesigns/fried-chicken-website-main/index.html',
     github: 'https://github.com/leonardojulius/fried-chicken-website',
   },
   {
     title: 'Last Minute LMS',
+    category: 'Web Design',
     description: 'A comprehensive Learning Management System built with React and Vite. Features interactive course modules, progress tracking, and a modern dashboard layout.',
     tags: ['React', 'Vite', 'JavaScript', 'CSS'],
-    previewUrl: 'https://leonardojulius.github.io/last-minute-lms/',
+    live: 'https://leonardojulius.github.io/last-minute-lms/',
     image: '/webdesigns/lms-preview.png',
     github: 'https://github.com/leonardojulius/last-minute-lms',
   },
 ]
+
 
 export const skills = [
   { category: 'AI & LLMs', items: ['Gemini/API', 'Groq/API', 'OpenRouter / APi', 'Kiro /  Claude Opus ', 'Prompt Engineering'] },
@@ -68,36 +70,42 @@ export const experiences = [
     company: 'National Irrigation Administration (NIA) – Region XI',
     period: 'Feb 2022 – Aug 2024',
     description: 'Processed administrative documents, coordinated with stakeholders, spearheaded web application development to digitize workflows, managed Synology NAS server deployment, and provided comprehensive technical support.',
+    tools: ['Synology NAS', 'Web Development', 'Technical Support', 'Administration'],
   },
   {
     role: 'Technical Support Staff',
     company: 'Action.Able Inc. (POSIBLE)',
     period: 'Jul 2020 – Jan 2021',
     description: 'Provided technical assistance for the POSIBLE platform, diagnosing and resolving issues related to payment systems and collaborating with the Customer Success Group.',
+    tools: ['Technical Support', 'Payment Systems', 'Troubleshooting'],
   },
   {
     role: 'Quality Assurance Specialist',
     company: 'Action.Able Inc. (POSIBLE)',
     period: 'Oct 2019 – May 2020',
     description: 'Conducted QA testing for digital products, tracked software defects, and collaborated with development teams to ensure product quality standards.',
+    tools: ['QA Testing', 'Bug Tracking', 'Quality Assurance'],
   },
   {
     role: 'Customer Service Representative',
     company: 'Inspiro Relia Inc.',
     period: 'Jan 2019 – May 2019',
     description: 'Delivered front-line customer service, handled inquiries and service requests in a fast-paced BPO environment, and consistently met performance metrics.',
+    tools: ['Customer Service', 'Communication', 'Problem Solving'],
   },
   {
     role: 'Project Web Developer / LMS Administrator',
     company: 'SERVFLEX, INC. (Assigned at PLDT, INC.)',
     period: 'Jan 2018 – Aug 2018',
     description: 'Managed end-to-end Moodle LMS operations, handled user provisioning, formulated advanced SQL queries for compliance reports, and collaborated with cross-functional teams.',
+    tools: ['Moodle LMS', 'SQL', 'System Administration'],
   },
   {
     role: 'Graphics Operator',
     company: 'Nakayama Technology Corporation (NTC)',
     period: 'May 2013 – Jan 2014',
     description: 'Created graphic design materials supporting operations and communications, utilizing design software tools to produce visual content aligned with company standards.',
+    tools: ['Graphic Design', 'Adobe Creative Suite', 'Visual Communication'],
   },
 ]
 

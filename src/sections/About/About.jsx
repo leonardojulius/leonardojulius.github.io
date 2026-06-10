@@ -5,7 +5,7 @@ function About() {
     <section id="about" className="section about">
       <div className="container">
         <h2 className="section__title fade-up">
-          <span className="section__number">01.</span> About Me
+          About Me
         </h2>
         <div className="about__content fade-up">
           <div className="about__text">

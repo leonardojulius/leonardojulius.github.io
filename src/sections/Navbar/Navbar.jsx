@@ -25,7 +25,7 @@ function Navbar({ scrolled, menuOpen, setMenuOpen, activeSection, scrollTo, them
           <li>
             <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
           </li>
-          {['about', 'skills', 'projects', 'webdesigns', 'certificates', 'experience', 'contact'].map((item) => (
+          {['projects', 'experience', 'skills', 'certificates', 'contact'].map((item) => (
             <li key={item}>
               <a
                 className={`nav__link ${activeSection === item ? 'nav__link--active' : ''}`}

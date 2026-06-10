@@ -6,7 +6,7 @@ function Skills() {
     <section id="skills" className="section skills">
       <div className="container">
         <h2 className="section__title fade-up">
-          <span className="section__number">02.</span> Skills & Technologies
+          Skills & Technologies
         </h2>
         <div className="skills__grid fade-up">
           {skills.map((group) => (

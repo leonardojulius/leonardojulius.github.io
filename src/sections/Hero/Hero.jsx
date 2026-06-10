@@ -81,8 +81,7 @@ function Hero({ scrollTo, theme }) {
             <span className="hero__cursor">|</span>
           </h2>
           <p className="hero__description">
-           I'm a Junior Full Stack Developer and AI Automation Specialist who builds intelligent, end-to-end applications. 
-           By connecting AI models, robust APIs, and modern web frameworks, I design workflows that eliminate manual tasks and unlock scalable growth for companies.
+            Results-driven IT professional with extensive experience in web development. Adept at bridging technical and operational functions by leveraging modern tech trends, with a strong foundation in utilizing n8n AI automation for process optimization, workflow enhancement, and cross-functional collaboration.
           </p>
           <div className="hero__cta">
             <a className="btn btn--rgb" href="#" target="_blank" rel="noopener noreferrer">

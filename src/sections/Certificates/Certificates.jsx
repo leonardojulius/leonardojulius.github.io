@@ -78,7 +78,7 @@ function Certificates() {
     <section id="certificates" className="section certificates">
       <div className="container">
         <h2 className="section__title fade-up">
-          <span className="section__number">05.</span> Specializations & Certifications
+          Specializations & Certifications
         </h2>
 
         {/* Specializations */}
