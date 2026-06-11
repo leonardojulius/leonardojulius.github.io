@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
-import { ArrowDownIcon } from '../../components/Icons'
+import { currentEvents } from '../../data'
+import { ArrowDownIcon, CloseIcon } from '../../components/Icons'
 import './Hero.css'
 
 const titles = [
@@ -15,8 +16,14 @@ function Hero({ scrollTo, theme }) {
   const [titleIndex, setTitleIndex] = useState(0)
   const [displayText, setDisplayText] = useState('')
   const [isDeleting, setIsDeleting] = useState(false)
+  const [showResume, setShowResume] = useState(false)
+  const [hoveredIdx, setHoveredIdx] = useState(null)
+  const [popupMousePos, setPopupMousePos] = useState({ x: 0, y: 0, w: 0, h: 0 })
   const taglineRef = useRef(null)
   const textRef = useRef(null)
+  const hideTimeout = useRef(null)
+
+  const marqueeItems = [...currentEvents, ...currentEvents, ...currentEvents, ...currentEvents, ...currentEvents]
 
   useEffect(() => {
     const currentTitle = titles[titleIndex]
@@ -84,9 +91,9 @@ function Hero({ scrollTo, theme }) {
             Results-driven IT professional with extensive experience in web development. Adept at bridging technical and operational functions by leveraging modern tech trends, with a strong foundation in utilizing n8n AI automation for process optimization, workflow enhancement, and cross-functional collaboration.
           </p>
           <div className="hero__cta">
-            <a className="btn btn--rgb" href="#" target="_blank" rel="noopener noreferrer">
+            <button className="btn btn--rgb" onClick={() => setShowResume(true)}>
               Resume
-            </a>
+            </button>
             <a className="btn btn--outline" onClick={() => scrollTo('contact')}>
               Get In Touch
             </a>
@@ -110,8 +117,95 @@ function Hero({ scrollTo, theme }) {
           </div>
         </div>
       </div>
+
+      {/* ===== Personal Gallery Marquee ===== */}
+      <div className="hero__marquee-container">
+        <div className="hero__marquee">
+          {marqueeItems.map((eventItem, idx) => (
+            <div
+              key={`marquee-${idx}`}
+              className="hero__marquee-item"
+              onMouseEnter={() => {
+                clearTimeout(hideTimeout.current)
+                setHoveredIdx(idx)
+              }}
+              onMouseLeave={() => {
+                hideTimeout.current = setTimeout(() => setHoveredIdx(null), 200)
+              }}
+            >
+              <img src={eventItem.image} alt={eventItem.title} className="hero__marquee-base-img" />
+            </div>
+          ))}
+        </div>
+      </div>
+
       <div className="hero__scroll" onClick={() => scrollTo('about')}>
         <ArrowDownIcon />
+      </div>
+
+      {/* ===== Resume Modal ===== */}
+      {showResume && (
+        <div className="resume-modal-overlay" onClick={() => setShowResume(false)}>
+          <div className="resume-modal" onClick={(e) => e.stopPropagation()}>
+            <button className="resume-modal__close" onClick={() => setShowResume(false)} aria-label="Close modal">
+              <CloseIcon />
+            </button>
+            <iframe
+              src="/resume/ResumePortfolio.pdf"
+              className="resume-modal__iframe"
+              title="Resume Preview"
+            />
+          </div>
+        </div>
+      )}
+
+      {/* Global Popup for Marquee Hover */}
+      <div
+        className={`projects__global-popup ${hoveredIdx !== null ? 'active' : ''}`}
+        onMouseEnter={() => clearTimeout(hideTimeout.current)}
+        onMouseLeave={() => setHoveredIdx(null)}
+      >
+        {hoveredIdx !== null && marqueeItems[hoveredIdx] && (
+          <>
+            <div
+              className="projects__marquee-overlay-img"
+              onMouseMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                setPopupMousePos({
+                  x: e.clientX - rect.left,
+                  y: e.clientY - rect.top,
+                  w: rect.width,
+                  h: rect.height
+                });
+              }}
+            >
+              <img src={marqueeItems[hoveredIdx].image} alt={marqueeItems[hoveredIdx].title} />
+              <div
+                className="projects__magnifier"
+                style={{
+                  left: popupMousePos.x,
+                  top: popupMousePos.y,
+                }}
+              >
+                <img
+                  src={marqueeItems[hoveredIdx].image}
+                  alt="magnified"
+                  className="projects__magnifier-img"
+                  style={{
+                    width: popupMousePos.w * 2.5,
+                    height: popupMousePos.h * 2.5,
+                    left: -(popupMousePos.x * 2.5 - 75),
+                    top: -(popupMousePos.y * 2.5 - 75),
+                  }}
+                />
+              </div>
+            </div>
+            <div className="projects__marquee-overlay-content">
+              <span className="projects__marquee-title">{marqueeItems[hoveredIdx].title}</span>
+              <p className="projects__marquee-desc">{marqueeItems[hoveredIdx].description}</p>
+            </div>
+          </>
+        )}
       </div>
     </section>
   )

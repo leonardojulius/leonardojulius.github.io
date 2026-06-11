@@ -2,9 +2,10 @@
 .hero {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 2rem;
+  padding: 5rem 2rem 2rem;
   position: relative;
   overflow-x: clip;
 }
@@ -47,16 +48,14 @@
   width: 380px;
   height: 380px;
   border-radius: 50%;
-  background: conic-gradient(
-    from 0deg,
-    #4285f4,
-    #9b72cb,
-    #d96570,
-    #d96570,
-    #fcc934,
-    #31a952,
-    #4285f4
-  );
+  background: conic-gradient(from 0deg,
+      #4285f4,
+      #9b72cb,
+      #d96570,
+      #d96570,
+      #fcc934,
+      #31a952,
+      #4285f4);
   filter: blur(40px);
   opacity: 0.5;
   animation: rgbRotate 6s linear infinite;
@@ -64,8 +63,13 @@
 }
 
 @keyframes rgbRotate {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 .hero__image img {
@@ -85,8 +89,15 @@
 }
 
 @keyframes heroFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
 }
 
 /* ===== Rotating Earth ===== */
@@ -110,10 +121,10 @@
 .planet-container {
   border-radius: 50%;
   height: 89px;
-   width: 89px;
+  width: 89px;
   overflow: hidden;
   position: relative;
- 
+
 }
 
 .planet-atmosphere {
@@ -226,13 +237,23 @@
 }
 
 @keyframes rotate-earth {
-  0% { background-position: 0% 0; }
-  100% { background-position: -200% 0; }
+  0% {
+    background-position: 0% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 @keyframes rotate-clouds {
-  0% { background-position: 0% 0; }
-  100% { background-position: -200% 0; }
+  0% {
+    background-position: 0% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 .hero__greeting {
@@ -278,8 +299,15 @@
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
 
 .hero__description {
@@ -296,11 +324,68 @@
   flex-wrap: wrap;
 }
 
+/* ===== Hero Gallery Marquee ===== */
+.hero__marquee-container {
+  width: 100%;
+  max-width: var(--max-width);
+  overflow: hidden;
+  position: relative;
+  margin: 1rem auto 0;
+  padding: 1rem 0;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  z-index: 5;
+}
+
+.hero__marquee {
+  display: flex;
+  width: max-content;
+  animation: heroMarqueeScroll 45s linear infinite;
+  gap: 1.5rem;
+}
+
+.hero__marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes heroMarqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 0.75rem)); }
+}
+
+.hero__marquee-item {
+  width: 180px;
+  height: 120px;
+  border-radius: 12px;
+  position: relative;
+  border: 1px solid var(--color-bg-lighter);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--color-bg-light);
+  cursor: zoom-in;
+  flex-shrink: 0;
+}
+
+.hero__marquee-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border-color: rgba(66, 133, 244, 0.5);
+  z-index: 50;
+}
+
+.hero__marquee-base-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0.5rem;
+  transition: transform 0.5s ease;
+}
+
+.hero__marquee-item:hover .hero__marquee-base-img {
+  transform: scale(1.15);
+}
+
 .hero__scroll {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: 1rem;
   color: var(--color-primary);
   animation: bounce 2s infinite;
   cursor: pointer;
@@ -314,14 +399,34 @@
 }
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-  40% { transform: translateX(-50%) translateY(-10px); }
-  60% { transform: translateX(-50%) translateY(-5px); }
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
 }
 
 @media (max-width: 768px) {
@@ -380,7 +485,7 @@
   .hero__image {
     width: 220px;
     height: 220px;
-       
+
     margin-left: 0;
   }
 
@@ -394,5 +499,216 @@
   .planet-container {
     width: 55px;
     height: 55px;
+  }
+}
+
+/* ===== Resume Modal ===== */
+.resume-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 2rem;
+  animation: fadeIn 0.2s ease;
+}
+
+.resume-modal {
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-bg-lighter);
+  border-radius: 12px;
+  max-width: 1000px;
+  width: 100%;
+  height: 92vh;
+  position: relative;
+  animation: scaleIn 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.resume-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  background: rgba(10, 25, 47, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  z-index: 10;
+  backdrop-filter: blur(4px);
+}
+
+.resume-modal__close:hover {
+  background: rgba(255, 107, 107, 0.3);
+  color: #ff6b6b;
+  transform: rotate(90deg);
+}
+
+.resume-modal__iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #fff;
+}
+
+@media (max-width: 768px) {
+  .resume-modal-overlay {
+    padding: 1rem;
+  }
+
+  .resume-modal__close {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* ===== Resume Modal ===== */
+.resume-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 2rem;
+  animation: fadeIn 0.2s ease;
+}
+
+.resume-modal {
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-bg-lighter);
+  border-radius: 12px;
+  max-width: 1000px;
+  width: 100%;
+  height: 92vh;
+  position: relative;
+  animation: scaleIn 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.resume-modal__toolbar {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  z-index: 10;
+}
+
+.resume-modal__download-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(10, 25, 47, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 0.5rem 1.25rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: var(--transition);
+  backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-family: var(--font-mono);
+}
+
+.resume-modal__download-btn:hover {
+  background: rgba(66, 133, 244, 0.3);
+  color: #4285f4;
+}
+
+.resume-modal__download-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.resume-modal__iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.resume-modal__fallback {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--color-text-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .resume-modal-overlay {
+    padding: 1rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }

@@ -43,11 +43,11 @@ function Projects() {
             Featured Projects
           </h2>
         </div>
-        
+
         <div className="projects__timeline">
           {uniqueCategories.map((category, index) => {
             const isExpanded = expandedItems[category]
-            
+
             // Get all projects for this category
             const categoryProjects = projects.filter(p => p.category === category)
 
@@ -57,8 +57,8 @@ function Projects() {
                 <div className="projects__content">
                   <h3 className="projects__title">{category}</h3>
                   <p className="projects__category-label">{categoryProjects.length} Projects</p>
-                  
-                  <button 
+
+                  <button
                     className="projects__expand-btn"
                     onClick={() => toggleExpand(category)}
                   >
@@ -135,16 +135,16 @@ function Projects() {
                                   )}
                                 </div>
                               </div>
-                              
+
                               {project.image && (
                                 <div className="project-card__image-container">
                                   <img src={project.image} alt={project.title} className="project-card__image" />
                                 </div>
                               )}
-                              
+
                               <h3 className="project-card__title">{project.title}</h3>
                               <p className="project-card__description">{project.description}</p>
-                              
+
                               {project.tags && (
                                 <ul className="project-card__tags">
                                   {project.tags.map((tag) => (
@@ -173,7 +173,7 @@ function Projects() {
               <h3 className="preview-modal__title">{previewProject.title}</h3>
               <div className="preview-modal__controls">
                 <div className="preview-modal__device-group">
-                  <button 
+                  <button
                     className={`preview-modal__device-btn ${deviceView === 'mobile' ? 'active' : ''}`}
                     onClick={() => setDeviceView('mobile')}
                     title="Mobile View"
@@ -181,7 +181,7 @@ function Projects() {
                     <MobileIcon />
                     <span className="preview-modal__device-label">Mobile</span>
                   </button>
-                  <button 
+                  <button
                     className={`preview-modal__device-btn ${deviceView === 'tablet' ? 'active' : ''}`}
                     onClick={() => setDeviceView('tablet')}
                     title="Tablet View"
@@ -189,7 +189,7 @@ function Projects() {
                     <TabletIcon />
                     <span className="preview-modal__device-label">Tablet</span>
                   </button>
-                  <button 
+                  <button
                     className={`preview-modal__device-btn ${deviceView === 'desktop' ? 'active' : ''}`}
                     onClick={() => setDeviceView('desktop')}
                     title="Desktop View"
@@ -217,6 +217,7 @@ function Projects() {
           </div>
         </div>
       )}
+
     </section>
   )
 }
