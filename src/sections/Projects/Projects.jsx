@@ -11,6 +11,7 @@ function Projects() {
   // Extract unique categories (excluding any null/undefined)
   const uniqueCategories = [...new Set(projects.map(p => p.category).filter(Boolean))]
 
+
   const toggleExpand = (category) => {
     setExpandedItems((prev) => ({
       ...prev,
@@ -51,6 +52,9 @@ function Projects() {
             // Get all projects for this category
             const categoryProjects = projects.filter(p => p.category === category)
 
+            // Collect unique tools/tags for this category
+            const categoryTools = [...new Set(categoryProjects.flatMap(p => p.tags || []))]
+
             return (
               <div key={category} className="projects__item fade-up">
                 <div className="projects__dot"></div>
@@ -65,6 +69,12 @@ function Projects() {
                     {isExpanded ? 'Hide projects' : 'Show projects'}
                     <span className={`projects__expand-icon ${isExpanded ? 'open' : ''}`}>▼</span>
                   </button>
+
+                  <div className="projects__category-tools">
+                    {categoryTools.map((tool) => (
+                      <span key={tool} className="projects__tool-badge">{tool}</span>
+                    ))}
+                  </div>
 
                   {isExpanded && (
                     <div className="projects__details">

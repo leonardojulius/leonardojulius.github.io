@@ -88,7 +88,7 @@ function Hero({ scrollTo, theme }) {
             <span className="hero__cursor">|</span>
           </h2>
           <p className="hero__description">
-            Results-driven IT professional with extensive experience in web development. Adept at bridging technical and operational functions by leveraging modern tech trends, with a strong foundation in utilizing n8n AI automation for process optimization, workflow enhancement, and cross-functional collaboration.
+            I build and deploy n8n-powered automation systems that eliminate manual bottlenecks, reduce operational costs, and scale business processes.
           </p>
           <div className="hero__cta">
             <button className="btn btn--rgb" onClick={() => setShowResume(true)}>

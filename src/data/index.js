@@ -101,6 +101,13 @@ export const experiences = [
         tools: ['Moodle LMS', 'SQL', 'System Administration'],
     },
     {
+        role: 'SEO & Web Developer',
+        company: 'Helptech Computers',
+        period: 'Mar 2014 – Dec 2017',
+        description: 'Spearheaded SEO and digital ad campaigns while developing and maintaining robust web systems. Engineered scalable backend solutions using the Yii2 framework and PHP, managed MySQL databases, and deployed applications on Ubuntu server environments.',
+        tools: ['SEO', 'Ads', 'Yii2', 'PHP', 'MySQL', 'Ubuntu'],
+    },
+    {
         role: 'Graphics Operator',
         company: 'Nakayama Technology Corporation (NTC)',
         period: 'May 2013 – Jan 2014',
@@ -210,6 +217,12 @@ export const currentEvents = [
         title: 'Graduation Highlights: SPARK Social Media Marketing 2.0',
         description: 'he DICT Region XI and the Local Government Unit of Digos City celebrated the graduation of the SPARK Technical Training on Social Media Marketing 2.0 at the Digital Transformation Center (DTC) in Digos City.',
         image: '/events/dict/pic2.jpg'
+    },
+
+    {
+        title: 'PLDT\'s digital inclusion initiatives',
+        description: 'Google Taara\'s innovative laser-based technology to deliver high-speed, 20 Gbps connectivity to remote areas, alongside a QSR PD workshop on leveraging Qlik Sense data analytics to optimize network deployment.',
+        image: '/events/pldt/pldt.png'
     },
 
 ]
