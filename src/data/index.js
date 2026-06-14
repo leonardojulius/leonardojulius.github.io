@@ -102,7 +102,7 @@ export const experiences = [
     },
     {
         role: 'SEO & Web Developer',
-        company: 'Helptech Computers',
+        company: 'Freelancing Agency',
         period: 'Mar 2014 – Dec 2017',
         description: 'Spearheaded SEO and digital ad campaigns while developing and maintaining robust web systems. Engineered scalable backend solutions using the Yii2 framework and PHP, managed MySQL databases, and deployed applications on Ubuntu server environments.',
         tools: ['SEO', 'Ads', 'Yii2', 'PHP', 'MySQL', 'Ubuntu'],
