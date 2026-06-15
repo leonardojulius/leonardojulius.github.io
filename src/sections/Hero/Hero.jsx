@@ -4,10 +4,9 @@ import { ArrowDownIcon, CloseIcon } from '../../components/Icons'
 import './Hero.css'
 
 const titles = [
-  'AI Automation Specialist',
-  'Junior Full Stack Engineer',
-  'n8n Workflow Builder',
-  'Social Media Automation',
+  'AI Automation Engineer',
+  'Fullstack Web Developer',
+  'n8n Automation Specialist',
 ]
 
 function Hero({ scrollTo, theme }) {
